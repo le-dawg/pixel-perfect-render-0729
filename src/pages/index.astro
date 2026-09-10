@@ -1,0 +1,38 @@
+---
+import '@fontsource/ibm-plex-sans/latin-400.css';
+import '@fontsource/ibm-plex-sans/latin-500.css';
+import '@fontsource/ibm-plex-sans/latin-600.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+import '../styles/global.css';
+import Hero from '../components/Hero.astro';
+import ProofStrip from '../components/ProofStrip.astro';
+import HowIWork from '../components/HowIWork.astro';
+import Timeline from '../components/Timeline.astro';
+import WhoIWorkBestWith from '../components/WhoIWorkBestWith.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { site, contactHref } from '../data/site';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery</title>
+    <meta name="description" content="Dawid Golebiewski helps enterprise teams turn stuck AI, data, and workflow initiatives into scoped delivery tracks people can trust, validate, and ship." />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content="Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery" />
+    <meta property="og:description" content="Turn fragmented AI and workflow work into scoped delivery tracks with trust, structure, and forward motion." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="name" href="#main">{site.name}<span>0xdawg.com</span></a>
+      <nav aria-label="Main navigation"><a href="#approach">Approach</a><a href="#experience">Track record</a></nav>
+    </header>
+    <main id="main"><Hero /><ProofStrip /><HowIWork /><Timeline /><WhoIWorkBestWith /><ContactBand /></main>
+    <footer class="wrap site-footer"><p>© {new Date().getFullYear()} {site.name}</p><div><a href="https://www.linkedin.com/in/dhoracy">LinkedIn ↗</a><a href="https://github.com/le-dawg">GitHub ↗</a><a href={`mailto:${site.email}`}>Email ↗</a></div></footer>
+  </body>
+</html>

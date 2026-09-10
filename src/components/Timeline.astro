@@ -1,0 +1,20 @@
+---
+import { timeline } from '../data/timeline';
+---
+<section id="experience" class="experience wrap" aria-labelledby="experience-title">
+  <div class="experience-intro">
+    <p class="experience-label">Track record</p>
+    <h2 id="experience-title">Built in live systems, not only discussed in slides.</h2>
+    <p>The work spans enterprise AI delivery, funded innovation programs, research-heavy evidence pipelines, and field deployment in operating environments.</p>
+  </div>
+  <ol class="timeline">
+    {timeline.map(entry => <li>
+      <div class="timeline-date"><time datetime={entry.from}>{entry.from}</time><span>—</span>{entry.to === 'Present' ? <span>Present</span> : <time datetime={entry.to}>{entry.to}</time>}</div>
+      <article class="timeline-entry">
+        <h3>{entry.org} <span>{entry.role}</span></h3>
+        <h4>{entry.challenge}</h4><p class="entry-summary">{entry.summary}</p>
+        <ul class="tags" aria-label="Areas of experience">{entry.tags.map(tag => <li>{tag}</li>)}</ul>
+      </article>
+    </li>)}
+  </ol>
+</section>
