@@ -5,6 +5,8 @@ const items = [...clientMarks, ...clientMarks];
 ---
 <div class="logo-carousel" aria-label="Selected organisations">
   <div class="logo-track">
-    {items.map((client, index) => <span class="logo-pill" aria-hidden={index >= clientMarks.length ? 'true' : 'false'}>{client}</span>)}
+    {items.map((client, index) => client.kind === 'image'
+      ? <img class="logo-pill logo-pill-image" src={client.src} alt={client.alt} aria-hidden={index >= clientMarks.length ? 'true' : 'false'} />
+      : <span class="logo-pill" aria-hidden={index >= clientMarks.length ? 'true' : 'false'}>{client.label}</span>)}
   </div>
 </div>

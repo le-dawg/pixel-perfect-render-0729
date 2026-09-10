@@ -159,6 +159,7 @@ img {
 }
 
 .hero-copy {
+  width: 100%;
   max-width: 720px;
 }
 
@@ -201,6 +202,16 @@ h1 {
   margin-top: 34px;
 }
 
+.hero .contact-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(100%, 720px);
+}
+
+.hero .contact-links > * {
+  width: 100%;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -239,10 +250,12 @@ h1 {
   color: rgba(88, 101, 122, 0.68);
   border: 1px solid rgba(31, 44, 65, 0.12);
   cursor: not-allowed;
+  text-align: center;
 }
 
 .hero-rail {
-  width: min(100%, 352px);
+  width: 100%;
+  max-width: 352px;
   justify-self: end;
   display: grid;
   gap: 18px;
@@ -377,6 +390,16 @@ h1 {
   color: rgba(88, 101, 122, 0.88);
 }
 
+.logo-pill-image {
+  height: 34px;
+  min-height: 34px;
+  width: auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
 .pressure-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -501,6 +524,7 @@ h1 {
 }
 
 .timeline-row {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 56px minmax(0, 1fr);
   gap: 28px;
@@ -523,6 +547,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  z-index: 2;
 }
 
 .timeline-node span {
@@ -660,7 +685,7 @@ h1 {
 
   .hero-rail {
     justify-self: start;
-    width: min(100%, 420px);
+    max-width: 420px;
   }
 
   .pressure-list,
@@ -709,8 +734,19 @@ h1 {
     font-size: 14px;
   }
 
+  .hero .contact-links {
+    width: 100%;
+    gap: 12px;
+    max-width: 420px;
+  }
+
+  .hero-copy,
+  .hero-rail {
+    max-width: 420px;
+  }
+
   .portrait {
-    width: min(100%, 290px);
+    width: 100%;
   }
 
   .proof-section,
@@ -763,6 +799,11 @@ h1 {
     left: 0;
     top: 0;
     width: 14px;
+  }
+
+  .timeline-side-left:empty,
+  .timeline-side-right:empty {
+    display: none;
   }
 
   .site-footer {
