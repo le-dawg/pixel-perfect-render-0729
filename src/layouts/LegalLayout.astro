@@ -1,6 +1,9 @@
 ---
 import '../styles/global.css';
+import { site } from '../data/site';
 const { title, description = '' } = Astro.props;
+const pageUrl = `${site.url}${Astro.url.pathname}`;
+const ogImageUrl = `${site.url}${site.ogImage}`;
 ---
 <!doctype html>
 <html lang="en">
@@ -9,7 +12,21 @@ const { title, description = '' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content={site.name} />
+    <link rel="canonical" href={pageUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content={site.domain} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={`Portrait of ${site.name}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    {description && <meta name="twitter:description" content={description} />}
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body class="legal-body">
     <main class="legal-shell">

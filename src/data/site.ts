@@ -1,6 +1,9 @@
 export const site = {
   name: 'Dawid Golebiewski',
   email: 'inbox-agent@0xdawg.com',
+  url: 'https://0xdawg.com',
+  domain: '0xdawg.com',
+  ogImage: '/images/dawid-golebiewski.jpg',
   // Set this when a verified booking URL is supplied. Until then, request a call by email.
   bookingUrl: '',
 };

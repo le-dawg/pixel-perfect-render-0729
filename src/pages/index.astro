@@ -11,20 +11,35 @@ import Timeline from '../components/Timeline.astro';
 import WhoIWorkBestWith from '../components/WhoIWorkBestWith.astro';
 import ContactBand from '../components/ContactBand.astro';
 import { site, contactHref } from '../data/site';
+
+const pageTitle = 'Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery';
+const pageDescription = 'Dawid Golebiewski helps enterprise teams turn stuck AI, data, and workflow initiatives into scoped delivery tracks people can trust, validate, and ship.';
+const pageUrl = `${site.url}/`;
+const ogImageUrl = `${site.url}${site.ogImage}`;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery</title>
-    <meta name="description" content="Dawid Golebiewski helps enterprise teams turn stuck AI, data, and workflow initiatives into scoped delivery tracks people can trust, validate, and ship." />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <meta name="theme-color" content="#f7f7f2" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content={site.name} />
+    <link rel="canonical" href={pageUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta property="og:title" content="Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery" />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content="Turn fragmented AI and workflow work into scoped delivery tracks with trust, structure, and forward motion." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content={site.domain} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={`Portrait of ${site.name}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -36,6 +51,8 @@ import { site, contactHref } from '../data/site';
     <footer class="wrap site-footer">
       <p>© {new Date().getFullYear()} {site.name}</p>
       <div class="site-footer-links">
+        <a href="/technical-due-diligence">Technical Due Diligence</a>
+        <span aria-hidden="true">|</span>
         <a href="/privacy">Privacy Policy</a>
         <span aria-hidden="true">|</span>
         <a href="/terms">Terms &amp; Conditions</a>
