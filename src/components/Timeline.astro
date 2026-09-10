@@ -7,14 +7,31 @@ import { timeline } from '../data/timeline';
     <h2 id="experience-title">Built in live systems, not only discussed in slides.</h2>
     <p>The work spans enterprise AI delivery, funded innovation programs, research-heavy evidence pipelines, and field deployment in operating environments.</p>
   </div>
-  <ol class="timeline">
-    {timeline.map(entry => <li>
-      <div class="timeline-date"><time datetime={entry.from}>{entry.from}</time><span>—</span>{entry.to === 'Present' ? <span>Present</span> : <time datetime={entry.to}>{entry.to}</time>}</div>
-      <article class="timeline-entry">
-        <h3>{entry.org} <span>{entry.role}</span></h3>
-        <h4>{entry.challenge}</h4><p class="entry-summary">{entry.summary}</p>
-        <ul class="tags" aria-label="Areas of experience">{entry.tags.map(tag => <li>{tag}</li>)}</ul>
-      </article>
+  <ol class="timeline timeline-split">
+    {timeline.map((entry, index) => <li class:list={['timeline-row', index % 2 === 1 && 'is-right']}>
+      <div class="timeline-side timeline-side-left">{index % 2 === 0 && <article class="timeline-entry">
+        <p class="timeline-date">
+          <time datetime={entry.from}>{entry.from}</time>
+          <span>—</span>
+          {entry.to === 'Present' ? <span>Present</span> : <time datetime={entry.to}>{entry.to}</time>}
+        </p>
+        <h3>{entry.org}</h3>
+        <p class="timeline-role">{entry.role}</p>
+        <h4>{entry.challenge}</h4>
+        <p class="entry-summary">{entry.summary}</p>
+      </article>}</div>
+      <div class="timeline-node" aria-hidden="true"><span></span></div>
+      <div class="timeline-side timeline-side-right">{index % 2 === 1 && <article class="timeline-entry">
+        <p class="timeline-date">
+          <time datetime={entry.from}>{entry.from}</time>
+          <span>—</span>
+          {entry.to === 'Present' ? <span>Present</span> : <time datetime={entry.to}>{entry.to}</time>}
+        </p>
+        <h3>{entry.org}</h3>
+        <p class="timeline-role">{entry.role}</p>
+        <h4>{entry.challenge}</h4>
+        <p class="entry-summary">{entry.summary}</p>
+      </article>}</div>
     </li>)}
   </ol>
 </section>

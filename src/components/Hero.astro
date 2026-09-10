@@ -1,25 +1,31 @@
 ---
 import ContactLinks from './ContactLinks.astro';
+import HeroBackdrop from './HeroBackdrop.astro';
 import Portrait from './Portrait.astro';
 ---
-<section class="hero wrap" aria-labelledby="hero-title">
-  <div class="hero-copy">
-    <p class="hero-kicker">Enterprise AI, data, and workflow delivery</p>
-    <h1 id="hero-title">Enterprise operator for AI and workflow initiatives that need trust, structure, and forward motion.</h1>
-    <p class="hero-subline">AI access on its own does not create business capacity. I help teams turn fragmented AI, data, and knowledge work into scoped delivery tracks people can validate, run, and improve without constant rework.</p>
-    <p class="hero-support">Best fit when budget, stakeholders, and urgency already exist, but gains still are not showing up in throughput, ownership, or trust.</p>
-    <ContactLinks />
+<section class="hero-section" aria-labelledby="hero-title">
+  <div class="hero-backdrop-shell">
+    <HeroBackdrop />
   </div>
-  <aside class="hero-rail" aria-label="Credibility rail">
-    <div class="hero-proof">
-      <p class="hero-proof-label">Selected proof</p>
-      <h2>Built in live robotics deployments, research-heavy evidence pipelines, and enterprise AI delivery.</h2>
-      <ul class="hero-proof-list">
-        <li>Amazon Robotics deployment work in operating environments</li>
-        <li>DLR evidence pipelines for experimental systems</li>
-        <li>Enterprise AI delivery for financial and industrial clients</li>
-      </ul>
+  <div class="hero wrap">
+    <div class="hero-copy">
+      <p class="hero-kicker">Enterprise AI, data, and workflow delivery</p>
+      <h1 id="hero-title">Enterprise operator for AI and workflow initiatives that need trust, structure, and forward motion.</h1>
+      <p class="hero-subline">AI access on its own does not create business capacity. I help teams turn fragmented AI, data, and knowledge work into scoped delivery tracks people can validate, run, and improve without constant rework.</p>
+      <p class="hero-support">Best fit when budget, stakeholders, and urgency already exist, but gains still are not showing up in throughput, ownership, or trust.</p>
+      <ContactLinks />
     </div>
-    <Portrait />
-  </aside>
+    <aside class="hero-rail" aria-label="Credibility rail">
+      <div class="hero-proof">
+        <p class="hero-proof-label">Selected proof</p>
+        <h2>Built in live robotics deployments, research-heavy evidence pipelines, and enterprise AI delivery.</h2>
+        <ul class="hero-proof-list">
+          <li>Amazon Robotics deployment work in operating environments</li>
+          <li>DLR evidence pipelines for experimental systems</li>
+          <li>Enterprise AI delivery for financial and industrial clients</li>
+        </ul>
+      </div>
+      <Portrait />
+    </aside>
+  </div>
 </section>

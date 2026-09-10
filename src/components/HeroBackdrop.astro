@@ -1,0 +1,76 @@
+<svg aria-hidden="true" viewBox="0 0 1200 700" class="hero-backdrop" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <pattern id="mbse-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="rgba(17,22,27,0.08)" stroke-width="0.8" />
+    </pattern>
+    <linearGradient id="route-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(26,167,220,0.45)" />
+      <stop offset="100%" stop-color="rgba(26,167,220,0.18)" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#mbse-grid)" />
+
+  <g fill="none" stroke="rgba(26,167,220,0.22)" stroke-width="1.1">
+    <rect x="90" y="120" width="180" height="90">
+      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="9s" repeatCount="indefinite" begin="0s" />
+    </rect>
+    <rect x="430" y="70" width="200" height="100">
+      <animate attributeName="opacity" values="0.2;0.85;0.2" dur="10s" repeatCount="indefinite" begin="0.6s" />
+    </rect>
+    <rect x="820" y="160" width="190" height="95">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="11s" repeatCount="indefinite" begin="1.2s" />
+    </rect>
+    <rect x="200" y="400" width="200" height="100">
+      <animate attributeName="opacity" values="0.25;0.8;0.25" dur="12s" repeatCount="indefinite" begin="1.8s" />
+    </rect>
+    <rect x="610" y="430" width="210" height="105">
+      <animate attributeName="opacity" values="0.2;0.8;0.2" dur="13s" repeatCount="indefinite" begin="2.4s" />
+    </rect>
+    <rect x="950" y="520" width="170" height="90">
+      <animate attributeName="opacity" values="0.18;0.72;0.18" dur="14s" repeatCount="indefinite" begin="3s" />
+    </rect>
+  </g>
+
+  <g fill="none" stroke="url(#route-gradient)" stroke-width="1.1" opacity="0.4">
+    <path id="route-a" d="M270 165 H350 V120 H430">
+      <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="3.2s" repeatCount="indefinite" />
+    </path>
+    <path id="route-b" d="M630 120 H720 V208 H820">
+      <animate attributeName="stroke-dasharray" values="0,300;300,0" dur="3.8s" repeatCount="indefinite" begin="0.3s" />
+    </path>
+    <path id="route-c" d="M300 400 V300 H520 V170">
+      <animate attributeName="stroke-dasharray" values="0,420;420,0" dur="4.2s" repeatCount="indefinite" begin="0.7s" />
+    </path>
+    <path id="route-d" d="M400 460 H520 V483 H610">
+      <animate attributeName="stroke-dasharray" values="0,260;260,0" dur="3.4s" repeatCount="indefinite" begin="1.1s" />
+    </path>
+    <path id="route-e" d="M820 483 H900 V565 H950">
+      <animate attributeName="stroke-dasharray" values="0,220;220,0" dur="3.6s" repeatCount="indefinite" begin="1.4s" />
+    </path>
+    <path id="route-f" d="M180 210 V330 H700 V430">
+      <animate attributeName="stroke-dasharray" values="0,520;520,0" dur="5.2s" repeatCount="indefinite" begin="1.8s" />
+    </path>
+  </g>
+
+  <g fill="rgba(26,167,220,0.65)">
+    <circle r="4">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M270 165 H350 V120 H430" />
+    </circle>
+    <circle r="4">
+      <animateMotion dur="8.2s" repeatCount="indefinite" path="M630 120 H720 V208 H820" begin="0.8s" />
+    </circle>
+    <circle r="4">
+      <animateMotion dur="9.1s" repeatCount="indefinite" path="M300 400 V300 H520 V170" begin="1.2s" />
+    </circle>
+    <circle r="4">
+      <animateMotion dur="6.8s" repeatCount="indefinite" path="M400 460 H520 V483 H610" begin="1.6s" />
+    </circle>
+    <circle r="4">
+      <animateMotion dur="6.5s" repeatCount="indefinite" path="M820 483 H900 V565 H950" begin="2s" />
+    </circle>
+    <circle r="4">
+      <animateMotion dur="10s" repeatCount="indefinite" path="M180 210 V330 H700 V430" begin="2.4s" />
+    </circle>
+  </g>
+</svg>

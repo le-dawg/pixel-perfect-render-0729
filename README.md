@@ -29,10 +29,15 @@ Netlify: use this folder as the base directory, `npm run build`, publish `dist`.
 - `hero-proof-label`
 - `proof-label`
 - `method-label`
+- `experience-label`
+- `fit-label`
+- `contact-label`
 
 These markers are intentionally **kept in the code but hidden in CSS** via `display: none` in `src/styles/global.css`.
 
 Reason: the project currently keeps the structural hooks in markup for future experimentation, but the visible UI should not show these labels in the current presentation.
+
+Note: the proof section's accessibility hook was moved to the visible `h2`, so the hidden eyebrow is no longer used for `aria-labelledby`.
 
 ## Continue
 
