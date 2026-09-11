@@ -188,10 +188,88 @@ h1 {
 
 .hero-support {
   margin-top: 18px;
-  max-width: 42ch;
+  max-width: 46ch;
   font-size: 15px;
   line-height: 1.7;
   color: var(--muted-soft);
+}
+
+.hero-support p {
+  margin: 0 0 10px;
+}
+
+.hero-support ul {
+  margin: 0 0 10px;
+  padding-left: 1.2em;
+}
+
+.hero-support li {
+  margin: 2px 0;
+}
+
+.hero-support em {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.hero-closing {
+  margin-top: 14px !important;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Rotating hero headline — animation boxed to the text itself */
+.hero-rotator {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-rotator-line {
+  display: block;
+  will-change: transform, opacity;
+}
+
+.hero-rotator-line.is-leaving {
+  animation: hero-line-out 0.38s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+}
+
+.hero-rotator-line.is-entering {
+  animation: hero-line-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-rotator-line s {
+  text-decoration-thickness: 0.09em;
+  text-decoration-color: currentColor;
+  opacity: 0.72;
+}
+
+@keyframes hero-line-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-0.55em);
+  }
+}
+
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rotator-line.is-leaving,
+  .hero-rotator-line.is-entering {
+    animation: none;
+  }
 }
 
 .contact-links {
