@@ -1,0 +1,67 @@
+export const diagonalBoundaries = {
+  boundaries: {
+    heroToProof: {
+      enabled: true,
+      angleDeg: -5,
+      colorToken: 'surface',
+      desktopDepthPx: 160,
+      tabletDepthPx: 112,
+      mobileDepthPx: 72,
+      overscanXPx: 140,
+      overlapPx: 2,
+    },
+    proofToMethod: {
+      enabled: true,
+      angleDeg: 5,
+      colorToken: 'canvas',
+      desktopDepthPx: 128,
+      tabletDepthPx: 96,
+      mobileDepthPx: 64,
+      overscanXPx: 120,
+      overlapPx: 2,
+    },
+    methodToTimeline: {
+      enabled: true,
+      angleDeg: -5,
+      colorToken: 'canvas',
+      desktopDepthPx: 112,
+      tabletDepthPx: 88,
+      mobileDepthPx: 56,
+      overscanXPx: 110,
+      overlapPx: 2,
+    },
+    timelineToFit: {
+      enabled: true,
+      angleDeg: 5,
+      colorToken: 'surface',
+      desktopDepthPx: 128,
+      tabletDepthPx: 96,
+      mobileDepthPx: 64,
+      overscanXPx: 120,
+      overlapPx: 2,
+    },
+    fitToContact: {
+      enabled: true,
+      angleDeg: -5,
+      colorToken: 'pastel',
+      desktopDepthPx: 144,
+      tabletDepthPx: 104,
+      mobileDepthPx: 68,
+      overscanXPx: 130,
+      overlapPx: 2,
+    },
+    contactToFooter: {
+      enabled: false,
+      angleDeg: 0,
+      colorToken: 'canvas',
+      desktopDepthPx: 0,
+      tabletDepthPx: 0,
+      mobileDepthPx: 0,
+      overscanXPx: 0,
+      overlapPx: 0,
+    },
+  },
+} as const;
+
+export type BoundaryKey = keyof typeof diagonalBoundaries.boundaries;
+export type BoundaryConfig = (typeof diagonalBoundaries.boundaries)[BoundaryKey];
