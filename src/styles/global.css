@@ -163,6 +163,14 @@ img {
   max-width: 720px;
 }
 
+.hero-copy-flow {
+  width: min(100%, 540px);
+}
+
+.hero-copy-flow .contact-links {
+  width: 100%;
+}
+
 .hero-kicker,
 .hero-proof-label,
 .proof-label,
@@ -174,24 +182,26 @@ img {
 }
 
 h1 {
-  font-size: clamp(3.4rem, 6vw, 5.6rem);
-  max-width: 13ch;
+  font-size: 3rem;
+  max-width: 16ch;
 }
 
 .hero-subline {
   margin-top: 28px;
-  max-width: 35ch;
+  max-width: 100%;
   font-size: clamp(1.12rem, 2vw, 1.4rem);
   line-height: 1.48;
   color: var(--muted);
+  text-align: justify;
 }
 
 .hero-support {
   margin-top: 18px;
-  max-width: 46ch;
+  max-width: 100%;
   font-size: 15px;
   line-height: 1.7;
-  color: var(--muted-soft);
+  color: var(--muted);
+  text-align: justify;
 }
 
 .hero-support p {
@@ -230,11 +240,11 @@ h1 {
 }
 
 .hero-rotator-line.is-leaving {
-  animation: hero-line-out 0.38s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  animation: hero-line-out 0.76s cubic-bezier(0.4, 0, 0.6, 1) forwards;
 }
 
 .hero-rotator-line.is-entering {
-  animation: hero-line-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-line-in 0.84s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-rotator-line s {
@@ -961,6 +971,10 @@ body.opportunity-teaser-open .opportunity-teaser-description {
     gap: 12px;
   }
 
+  .hero-copy-flow {
+    width: min(100%, 520px);
+  }
+
   .timeline-row {
     grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
   }
@@ -1020,6 +1034,11 @@ body.opportunity-teaser-open .opportunity-teaser-description {
     max-width: 420px;
     gap: 10px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-copy-flow {
+    width: 100%;
+    max-width: 420px;
   }
 
   .hero-copy,

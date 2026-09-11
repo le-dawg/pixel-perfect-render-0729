@@ -24,17 +24,19 @@ const lines = [
           <span class="hero-rotator-line" set:html={lines[0]} />
         </span>
       </h1>
-      <p class="hero-subline">AI is an amplifier of your processes: better process leads to much better and faster AI ROI.</p>
-      <div class="hero-support">
-        <p>But you don&rsquo;t have the time to figure out where the <em>current</em> capabilities can achieve the highest benefit:</p>
-        <ul>
-          <li>across departments</li>
-          <li>across jurisdictions</li>
-        </ul>
-        <p>And you lack the people to implement what&rsquo;s already on the roadmap.</p>
-        <p class="hero-closing">If you are drowning in an ocean of opportunity, a hero is what you need.</p>
+      <div class="hero-copy-flow">
+        <p class="hero-subline">AI is an amplifier of your processes: better process leads to much better and faster AI ROI.</p>
+        <div class="hero-support">
+          <p>But you don&rsquo;t have the time to figure out where the <em>current</em> capabilities can achieve the highest benefit:</p>
+          <ul>
+            <li>across departments</li>
+            <li>across jurisdictions</li>
+          </ul>
+          <p>And you lack the people to implement what&rsquo;s already on the roadmap.</p>
+          <p class="hero-closing">If you are drowning in an ocean of opportunity, a hero is what you need.</p>
+        </div>
+        <ContactLinks />
       </div>
-      <ContactLinks />
     </div>
     <aside class="hero-rail" aria-label="Credibility rail">
       <div class="hero-proof">
@@ -66,9 +68,9 @@ const lines = [
           line.innerHTML = lines[i];
           line.classList.remove('is-leaving');
           line.classList.add('is-entering');
-          window.setTimeout(() => line.classList.remove('is-entering'), 420);
-        }, 380);
-      }, 3000);
+          window.setTimeout(() => line.classList.remove('is-entering'), 840);
+        }, 760);
+      }, 6000);
     }
   }
 </script>
