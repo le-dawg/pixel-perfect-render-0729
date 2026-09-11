@@ -1036,6 +1036,11 @@ body.opportunity-teaser-open .opportunity-teaser-description {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero-copy-flow {
+    width: 100%;
+    max-width: 420px;
+  }
+
   .hero-copy,
   .hero-rail {
     max-width: none;
