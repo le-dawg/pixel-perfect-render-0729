@@ -10,10 +10,11 @@ import HowIWork from '../components/HowIWork.astro';
 import Timeline from '../components/Timeline.astro';
 import WhoIWorkBestWith from '../components/WhoIWorkBestWith.astro';
 import ContactBand from '../components/ContactBand.astro';
+import OpportunityTeaser from '../components/OpportunityTeaser.astro';
 import { site, contactHref } from '../data/site';
 
 const pageTitle = 'Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery';
-const pageDescription = 'Dawid Golebiewski helps enterprise teams turn stuck AI, data, and workflow initiatives into scoped delivery tracks people can trust, validate, and ship.';
+const pageDescription = 'Dawid Golebiewski helps enterprise teams fix the operating problems that keep AI access from turning into business capacity, trusted delivery, and measurable value.';
 const pageUrl = `${site.url}/`;
 const ogImageUrl = `${site.url}${site.ogImage}`;
 ---
@@ -30,7 +31,7 @@ const ogImageUrl = `${site.url}${site.ogImage}`;
     <link rel="canonical" href={pageUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content="Turn fragmented AI and workflow work into scoped delivery tracks with trust, structure, and forward motion." />
+    <meta property="og:description" content="Fix the operating problems that keep AI access from turning into trusted delivery, business capacity, and measurable value." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={pageUrl} />
     <meta property="og:site_name" content={site.domain} />
@@ -48,6 +49,7 @@ const ogImageUrl = `${site.url}${site.ogImage}`;
       <nav aria-label="Main navigation"><a href="#approach">Approach</a><a href="#experience">Track record</a></nav>
     </header>
     <main id="main"><Hero /><ProofStrip /><HowIWork /><Timeline /><WhoIWorkBestWith /><ContactBand /></main>
+    <OpportunityTeaser />
     <footer class="wrap site-footer">
       <p>© {new Date().getFullYear()} {site.name}</p>
       <div class="site-footer-links">
