@@ -36,4 +36,18 @@ describe('diagonal boundary config', () => {
     expect(component).toContain('getBoundaryConfig(boundary)');
     expect(component).toContain('boundaryStyleVars(config)');
   });
+
+  it('places diagonal boundaries between section components in the homepage', () => {
+    const page = readFileSync(
+      new URL('../src/pages/index.astro', import.meta.url),
+      'utf8',
+    );
+
+    expect(page).toContain("import DiagonalBoundary from '../components/DiagonalBoundary.astro'");
+    expect(page).toContain('<Hero /><DiagonalBoundary boundary="heroToProof" />');
+    expect(page).toContain('<ProofStrip /><DiagonalBoundary boundary="proofToMethod" />');
+    expect(page).toContain('<HowIWork /><DiagonalBoundary boundary="methodToTimeline" />');
+    expect(page).toContain('<Timeline /><DiagonalBoundary boundary="timelineToFit" />');
+    expect(page).toContain('<WhoIWorkBestWith /><DiagonalBoundary boundary="fitToContact" />');
+  });
 });

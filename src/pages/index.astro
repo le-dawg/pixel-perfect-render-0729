@@ -10,6 +10,7 @@ import HowIWork from '../components/HowIWork.astro';
 import Timeline from '../components/Timeline.astro';
 import WhoIWorkBestWith from '../components/WhoIWorkBestWith.astro';
 import ContactBand from '../components/ContactBand.astro';
+import DiagonalBoundary from '../components/DiagonalBoundary.astro';
 import OpportunityTeaser from '../components/OpportunityTeaser.astro';
 import { site, contactHref } from '../data/site';
 
@@ -48,7 +49,7 @@ const ogImageUrl = `${site.url}${site.ogImage}`;
       <a class="name" href="#main">{site.name}<span>0xdawg.com</span></a>
       <nav aria-label="Main navigation"><a href="#approach">Approach</a><a href="#experience">Track record</a></nav>
     </header>
-    <main id="main"><Hero /><ProofStrip /><HowIWork /><Timeline /><WhoIWorkBestWith /><ContactBand /></main>
+    <main id="main"><Hero /><DiagonalBoundary boundary="heroToProof" /><ProofStrip /><DiagonalBoundary boundary="proofToMethod" /><HowIWork /><DiagonalBoundary boundary="methodToTimeline" /><Timeline /><DiagonalBoundary boundary="timelineToFit" /><WhoIWorkBestWith /><DiagonalBoundary boundary="fitToContact" /><ContactBand /></main>
     <OpportunityTeaser />
     <footer class="wrap site-footer">
       <p>© {new Date().getFullYear()} {site.name}</p>
