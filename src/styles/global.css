@@ -163,6 +163,14 @@ img {
   max-width: 720px;
 }
 
+.hero-copy-flow {
+  width: min(100%, 540px);
+}
+
+.hero-copy-flow .contact-links {
+  width: 100%;
+}
+
 .hero-kicker,
 .hero-proof-label,
 .proof-label,
