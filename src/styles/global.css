@@ -189,10 +189,11 @@ h1 {
 
 .hero-support {
   margin-top: 18px;
-  max-width: 46ch;
+  max-width: 100%;
   font-size: 15px;
   line-height: 1.7;
-  color: var(--muted-soft);
+  color: var(--muted);
+  text-align: justify;
 }
 
 .hero-support p {
