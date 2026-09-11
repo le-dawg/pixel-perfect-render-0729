@@ -180,10 +180,11 @@ h1 {
 
 .hero-subline {
   margin-top: 28px;
-  max-width: 35ch;
+  max-width: 100%;
   font-size: clamp(1.12rem, 2vw, 1.4rem);
   line-height: 1.48;
   color: var(--muted);
+  text-align: justify;
 }
 
 .hero-support {
