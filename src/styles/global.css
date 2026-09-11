@@ -971,6 +971,10 @@ body.opportunity-teaser-open .opportunity-teaser-description {
     gap: 12px;
   }
 
+  .hero-copy-flow {
+    width: min(100%, 520px);
+  }
+
   .timeline-row {
     grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
   }
