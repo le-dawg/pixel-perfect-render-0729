@@ -1,0 +1,20 @@
+---
+import { boundaryStyleVars, getBoundaryConfig } from '../lib/diagonalBoundaries';
+import type { BoundaryKey } from '../data/diagonalBoundaries';
+
+export interface Props {
+  boundary: BoundaryKey;
+}
+
+const { boundary } = Astro.props;
+const config = getBoundaryConfig(boundary);
+
+if (!config || !config.enabled) {
+  return null;
+}
+
+const styleVars = boundaryStyleVars(config);
+---
+<div class="diagonal-boundary" data-boundary={boundary} style={styleVars} aria-hidden="true">
+  <div class="diagonal-boundary__plane"></div>
+</div>
