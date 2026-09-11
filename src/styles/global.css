@@ -240,11 +240,11 @@ h1 {
 }
 
 .hero-rotator-line.is-leaving {
-  animation: hero-line-out 0.38s cubic-bezier(0.4, 0, 0.6, 1) forwards;
+  animation: hero-line-out 0.76s cubic-bezier(0.4, 0, 0.6, 1) forwards;
 }
 
 .hero-rotator-line.is-entering {
-  animation: hero-line-in 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-line-in 0.84s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-rotator-line s {
