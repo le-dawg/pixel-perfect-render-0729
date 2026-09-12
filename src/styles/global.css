@@ -153,9 +153,9 @@ img {
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.76fr);
   align-items: start;
   gap: clamp(28px, 5vw, 88px);
-  min-height: 64vh;
+  min-height: auto;
   padding-top: clamp(40px, 7vh, 96px);
-  padding-bottom: 40px;
+  padding-bottom: 24px;
 }
 
 .hero-copy {
@@ -332,6 +332,39 @@ h1 {
   padding: 72px 0;
 }
 
+.diagonal-boundary {
+  --seam-depth: var(--seam-depth-desktop);
+  position: relative;
+  height: var(--seam-depth);
+  margin-top: calc(var(--seam-overlap) * -1);
+  margin-bottom: calc(calc(var(--seam-depth) * -1) + 24px + calc(var(--seam-overlap) * -1));
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.diagonal-boundary__plane {
+  position: absolute;
+  inset: calc(var(--seam-depth) * -0.55) calc(var(--seam-overscan) * -1);
+  background: var(--surface);
+  transform: skewY(var(--seam-angle));
+  transform-origin: center;
+}
+
+.diagonal-boundary[data-boundary='heroToProof'] .diagonal-boundary__plane,
+.diagonal-boundary[data-boundary='timelineToFit'] .diagonal-boundary__plane {
+  background: var(--surface);
+}
+
+.diagonal-boundary[data-boundary='proofToMethod'] .diagonal-boundary__plane,
+.diagonal-boundary[data-boundary='methodToTimeline'] .diagonal-boundary__plane {
+  background: var(--canvas);
+}
+
+.diagonal-boundary[data-boundary='fitToContact'] .diagonal-boundary__plane {
+  background: var(--pastel);
+}
+
 .proof-band {
   display: grid;
   gap: 28px;
@@ -457,6 +490,20 @@ h1 {
   max-width: 44ch;
   font-size: 16px;
   line-height: 1.72;
+  color: var(--muted);
+}
+
+.method-why-me {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.method-why-me p {
+  margin: 0;
+  max-width: 48ch;
+  font-size: 15px;
+  line-height: 1.7;
   color: var(--muted);
 }
 
@@ -864,6 +911,10 @@ body.opportunity-teaser-open .opportunity-teaser-description {
     width: calc(100% - 64px);
   }
 
+  .diagonal-boundary {
+    --seam-depth: var(--seam-depth-tablet);
+  }
+
   .pressure-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -902,6 +953,11 @@ body.opportunity-teaser-open .opportunity-teaser-description {
 }
 
 @media (max-width: 760px) {
+  .diagonal-boundary {
+    --seam-depth: var(--seam-depth-mobile);
+    margin-bottom: calc(calc(var(--seam-depth) * -1) + 18px + calc(var(--seam-overlap) * -1));
+  }
+
   .wrap {
     width: calc(100% - 40px);
   }
@@ -918,7 +974,7 @@ body.opportunity-teaser-open .opportunity-teaser-description {
   .hero {
     gap: 22px;
     padding-top: 24px;
-    padding-bottom: 32px;
+    padding-bottom: 20px;
     min-height: auto;
   }
 

@@ -50,4 +50,18 @@ describe('diagonal boundary config', () => {
     expect(page).toContain('<Timeline /><DiagonalBoundary boundary="timelineToFit" />');
     expect(page).toContain('<WhoIWorkBestWith /><DiagonalBoundary boundary="fitToContact" />');
   });
+
+  it('defines dedicated CSS for seam planes and responsive depth variables', () => {
+    const css = readFileSync(
+      new URL('../src/styles/global.css', import.meta.url),
+      'utf8',
+    );
+
+    expect(css).toContain('.diagonal-boundary');
+    expect(css).toContain('.diagonal-boundary__plane');
+    expect(css).toContain('transform: skewY(var(--seam-angle))');
+    expect(css).toContain('--seam-depth: var(--seam-depth-desktop)');
+    expect(css).toContain("@media (max-width: 1100px)");
+    expect(css).toContain("@media (max-width: 760px)");
+  });
 });
