@@ -4,3 +4,4 @@ dist/
 .DS_Store
 lovable3/
 lovable4/
+.playwright-mcp/

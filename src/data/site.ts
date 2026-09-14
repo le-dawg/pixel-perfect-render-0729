@@ -12,14 +12,15 @@ const body = `
 
 Subject: AI Project Bottleneck?
 
-I need a seasoned lieutenant to look at our process. Right now, my biggest headache is:
+We need a pragmatic look at our current AI and Data initiatives. 
 
 [ ] AI isn't delivering measurable gains
 [ ] Internal projects are stalling or taking too long
 [ ] We lack the bandwidth or specific know-how to execute
+ 
+[Delete what doesn't apply or add your own!]
 
-[Delete what doesn't apply or add your own!
-No need for a perfect email. Tell me about the problem - we'll figure out the next steps together!]`;
+No need for a perfect email. Tell me about the problem - we'll figure out the next steps together!`;
 
 
 // const body = `Hello!
@@ -28,7 +29,7 @@ No need for a perfect email. Tell me about the problem - we'll figure out the ne
 // A hope that AI can free up your personnel for truly important work?
 // A ready-to-go strategy but you need experienced lieutenants to see it through and help with development, project management, spec or hiring?
 
- 
+
 // Fantastic! Not only is solving these puzzles what I love doing, but "teaching how to fish" is the destination, every time.
 
 // What's happening in your business? Maybe it's:
