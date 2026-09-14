@@ -174,24 +174,104 @@ img {
 }
 
 h1 {
-  font-size: clamp(3.4rem, 6vw, 5.6rem);
-  max-width: 13ch;
+  font-size: 3rem;
+  max-width: 16ch;
+}
+
+.hero-rotator {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-rotator-line {
+  will-change: transform, opacity;
+  display: block;
+}
+
+.hero-rotator-line.is-leaving {
+  animation: 0.76s cubic-bezier(0.4, 0, 0.6, 1) forwards hero-line-out;
+}
+
+.hero-rotator-line.is-entering {
+  animation: 0.84s cubic-bezier(0.16, 1, 0.3, 1) both hero-line-in;
+}
+
+.hero-rotator-line s {
+  opacity: 0.72;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 0.09em;
+}
+
+@keyframes hero-line-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-0.55em);
+  }
+}
+
+@keyframes hero-line-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.55em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-copy-flow {
+  width: min(100%, 540px);
+}
+
+.hero-copy-flow .contact-links {
+  width: 100%;
 }
 
 .hero-subline {
   margin-top: 28px;
-  max-width: 35ch;
-  font-size: clamp(1.12rem, 2vw, 1.4rem);
+  max-width: 100%;
+  font-size: clamp(1.22rem, 2vw, 1.6rem);
   line-height: 1.48;
   color: var(--muted);
+  text-align: justify;
 }
 
 .hero-support {
   margin-top: 18px;
-  max-width: 42ch;
-  font-size: 15px;
+  max-width: 100%;
+  font-size: 1.4rem;
   line-height: 1.7;
-  color: var(--muted-soft);
+  color: var(--muted);
+  text-align: justify;
+}
+
+.hero-support p {
+  margin: 0 0 10px;
+}
+
+.hero-support ul {
+  margin: 0 0 10px;
+  padding-left: 1.2em;
+}
+
+.hero-support li {
+  margin: 2px 0;
+}
+
+.hero-support em {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.hero-closing {
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 14px !important;
 }
 
 .contact-links {
@@ -1000,6 +1080,11 @@ body.opportunity-teaser-open .opportunity-teaser-description {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero-copy-flow {
+    width: 100%;
+    max-width: 420px;
+  }
+
   .hero-copy,
   .hero-rail {
     max-width: none;
@@ -1095,5 +1180,10 @@ body.opportunity-teaser-open .opportunity-teaser-description {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .hero-rotator-line.is-leaving,
+  .hero-rotator-line.is-entering {
+    animation: none !important;
   }
 }
