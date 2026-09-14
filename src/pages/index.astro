@@ -14,7 +14,7 @@ import DiagonalBoundary from '../components/DiagonalBoundary.astro';
 import OpportunityTeaser from '../components/OpportunityTeaser.astro';
 import { site, contactHref } from '../data/site';
 
-const pageTitle = 'Dawid Golebiewski — Enterprise AI, Data, and Workflow Delivery';
+const pageTitle = 'Dawid Golebiewski — AI, Data, and Product for Enterprises ';
 const pageDescription = 'Dawid Golebiewski helps enterprise teams fix the operating problems that keep AI access from turning into business capacity, trusted delivery, and measurable value.';
 const pageUrl = `${site.url}/`;
 const ogImageUrl = `${site.url}${site.ogImage}`;
@@ -44,9 +44,8 @@ const ogImageUrl = `${site.url}${site.ogImage}`;
     <meta name="twitter:image" content={ogImageUrl} />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header wrap">
-      <a class="name" href="#main">{site.name}<span>0xdawg.com</span></a>
+      <a class="name" href="#main">{pageTitle}</a>
       <nav aria-label="Main navigation"><a href="#approach">Approach</a><a href="#experience">Track record</a></nav>
     </header>
     <main id="main"><Hero /><DiagonalBoundary boundary="heroToProof" /><ProofStrip /><DiagonalBoundary boundary="proofToMethod" /><HowIWork /><DiagonalBoundary boundary="methodToTimeline" /><Timeline /><DiagonalBoundary boundary="timelineToFit" /><WhoIWorkBestWith /><DiagonalBoundary boundary="fitToContact" /><ContactBand /></main>

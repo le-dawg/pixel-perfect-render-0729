@@ -256,11 +256,25 @@ h1 {
 
 .hero-support ul {
   margin: 0 0 10px;
-  padding-left: 1.2em;
+  padding-left: 0;
+  list-style: none;
 }
 
 .hero-support li {
-  margin: 2px 0;
+  position: relative;
+  padding-left: 18px;
+  margin: 4px 0;
+}
+
+.hero-support li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 .hero-support em {

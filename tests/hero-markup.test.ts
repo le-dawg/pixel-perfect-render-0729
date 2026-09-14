@@ -25,10 +25,10 @@ describe('hero component markup', () => {
     expect(html).toContain('class="hero-subline"');
     expect(html).toContain('AI is an amplifier of your processes: better process leads to much better and faster AI ROI.');
     expect(html).toContain('class="hero-support"');
-    expect(html).toContain('across departments');
-    expect(html).toContain('across jurisdictions');
+    expect(html).toContain('figure out where <em>current</em> AI capabilities maximize benefit');
+    expect(html).toContain('across teams, departments, locations, jurisdictions ...');
     expect(html).toContain('class="hero-closing"');
-    expect(html).toContain('If you are drowning in an ocean of opportunity, a hero is what you need.');
+    expect(html).toContain("You don't have to feel like drowning in an ocean of opportunity.");
   });
 
   test('imports and executes the rotator client script', () => {

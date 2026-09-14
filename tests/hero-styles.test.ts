@@ -30,4 +30,14 @@ describe('hero styling and animations', () => {
 
     expect(css).toMatch(/@media\s*\(\s*prefers-reduced-motion:\s*reduce\s*\)\s*\{[\s\S]*?\.hero-rotator-line/);
   });
+
+  test('styles .hero-support li with custom accent bullets via ::before', () => {
+    const css = readFileSync(globalCssPath, 'utf8');
+
+    expect(css).toMatch(/\.hero-support\s+li\s*\{[^}]*position:\s*relative/);
+    expect(css).toMatch(/\.hero-support\s+li\s*\{[^}]*padding-left:/);
+    expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*content:\s*['"]['"]/);
+    expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*background:\s*var\(--accent\)/);
+    expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*border-radius:\s*50%/);
+  });
 });
