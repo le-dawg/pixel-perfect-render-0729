@@ -1,9 +1,21 @@
+export const boundaryOrder = [
+  'heroToProof',
+  'proofToMethod',
+  'methodToTimeline',
+  'timelineToFit',
+  'fitToContact',
+] as const;
+
 export const diagonalBoundaries = {
+  topBoundaryDirection: 'positive',
+  angleAbsDeg: 5,
+  boundaryOrder,
   boundaries: {
     heroToProof: {
       enabled: true,
-      angleDeg: -5,
-      colorToken: 'surface',
+      directionRelationToPrevious: 'same',
+      fromToken: 'canvas',
+      toToken: 'surface',
       desktopDepthPx: 160,
       tabletDepthPx: 112,
       mobileDepthPx: 72,
@@ -12,8 +24,9 @@ export const diagonalBoundaries = {
     },
     proofToMethod: {
       enabled: true,
-      angleDeg: 5,
-      colorToken: 'canvas',
+      directionRelationToPrevious: 'flip',
+      fromToken: 'surface',
+      toToken: 'method-bg',
       desktopDepthPx: 128,
       tabletDepthPx: 96,
       mobileDepthPx: 64,
@@ -22,8 +35,9 @@ export const diagonalBoundaries = {
     },
     methodToTimeline: {
       enabled: true,
-      angleDeg: -5,
-      colorToken: 'canvas',
+      directionRelationToPrevious: 'same',
+      fromToken: 'method-bg',
+      toToken: 'canvas',
       desktopDepthPx: 112,
       tabletDepthPx: 88,
       mobileDepthPx: 56,
@@ -32,8 +46,9 @@ export const diagonalBoundaries = {
     },
     timelineToFit: {
       enabled: true,
-      angleDeg: 5,
-      colorToken: 'surface',
+      directionRelationToPrevious: 'flip',
+      fromToken: 'canvas',
+      toToken: 'surface',
       desktopDepthPx: 128,
       tabletDepthPx: 96,
       mobileDepthPx: 64,
@@ -42,8 +57,9 @@ export const diagonalBoundaries = {
     },
     fitToContact: {
       enabled: true,
-      angleDeg: -5,
-      colorToken: 'pastel',
+      directionRelationToPrevious: 'flip',
+      fromToken: 'surface',
+      toToken: 'pastel',
       desktopDepthPx: 144,
       tabletDepthPx: 104,
       mobileDepthPx: 68,
@@ -52,8 +68,8 @@ export const diagonalBoundaries = {
     },
     contactToFooter: {
       enabled: false,
-      angleDeg: 0,
-      colorToken: 'canvas',
+      fromToken: 'pastel',
+      toToken: 'canvas',
       desktopDepthPx: 0,
       tabletDepthPx: 0,
       mobileDepthPx: 0,
@@ -63,5 +79,22 @@ export const diagonalBoundaries = {
   },
 } as const;
 
+export type OrderedBoundaryKey = (typeof boundaryOrder)[number];
 export type BoundaryKey = keyof typeof diagonalBoundaries.boundaries;
-export type BoundaryConfig = (typeof diagonalBoundaries.boundaries)[BoundaryKey];
+export type BoundaryToken = 'canvas' | 'surface' | 'method-bg' | 'pastel';
+
+export type BoundaryBaseConfig = {
+  enabled: boolean;
+  directionRelationToPrevious: 'same' | 'flip';
+  fromToken: BoundaryToken;
+  toToken: BoundaryToken;
+  desktopDepthPx: number;
+  tabletDepthPx: number;
+  mobileDepthPx: number;
+  overscanXPx: number;
+  overlapPx: number;
+};
+
+export type ResolvedBoundaryConfig = BoundaryBaseConfig & {
+  angleDeg: number;
+};
