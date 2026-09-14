@@ -1,0 +1,45 @@
+# 0xdawg.com / Dawid Golebiewski
+
+> Hamburg-, DACH-, and EU-relevant enterprise AI, data, workflow, and technical due diligence consulting for teams that need AI initiatives to become trusted delivery and measurable business value.
+
+## Services / Leistungen
+
+- [Enterprise AI, Data, and Workflow Consulting](https://solutions.0xdawg.com/): Homepage covering enterprise AI delivery, workflow redesign, shared-context problems, validation bottlenecks, and how stuck initiatives are turned into executable delivery.
+- [Diagnosis, Scope, Delivery](https://solutions.0xdawg.com/#approach): Core consulting approach for diagnosing AI and process bottlenecks, refitting shared context, and delivering validated implementations with knowledge transfer.
+- [Technical Due Diligence](https://solutions.0xdawg.com/technical-due-diligence): Offer for buyers, founders, and operators who need architecture review, delivery-risk assessment, hidden process debt analysis, and checks on whether a claimed AI advantage is durable.
+- [Start a Project Conversation](https://solutions.0xdawg.com/#contact): Contact entry point for stuck AI, workflow, automation, or due diligence initiatives via booking link or email.
+
+## Track Record / Projekterfahrung
+
+- [Enterprise AI Track Record](https://solutions.0xdawg.com/#experience): Reverse-chronology experience spanning AIR / AI-Raadgivning, NATIX GmbH, DLR, and Amazon Robotics across enterprise AI, robotics, computer vision, sensor data, and R&D delivery.
+- [Best-Fit Engagements](https://solutions.0xdawg.com/#fit-title): Defines the initiatives most likely to succeed: owned, budgeted, execution-critical work where AI access exists but business value still fails to appear.
+- [AI Failure Pattern Framework](https://solutions.0xdawg.com/#proof-heading): Diagnostic overview of six operating failures that stall enterprise AI adoption, including unclear expectations, pre-AI workflows, weak shared context, cleanup load, and premature cost pressure.
+
+## Query Alignment / Suchintention
+
+- [Hamburg KI-Experte / DACH KI-Beratung](https://solutions.0xdawg.com/): Best starting page for queries about an AI expert or AI consultant relevant to Hamburg, Germany, the DACH region, and EU enterprise work.
+- [KI-Beratung für Prozesse und Umsetzung](https://solutions.0xdawg.com/#approach): Best page anchor for queries about AI process consulting, workflow redesign, scoping, delivery, and turning AI ideas into operational work.
+- [KI-Entwicklung und Delivery-Erfahrung](https://solutions.0xdawg.com/#experience): Best page anchor for queries about AI implementation, project delivery, technical consulting, and practical experience across enterprise systems.
+
+## Key Facts / Fakten
+
+- Consultant: Dawid Golebiewski
+- Focus: enterprise AI, data, workflow delivery, workflow automation, and technical due diligence
+- Regional relevance: Hamburg-, DACH-, and EU-oriented enterprise consulting
+- Common buyer problems: AI process bottlenecks, validation-heavy knowledge work, workflow redesign, stalled implementation, and technical due diligence
+- Industry exposure named on the site: finance, manufacturing, logistics/robotics, computer vision, and research-heavy evidence pipelines
+- Public organizations referenced on the site: AIR / AI-Raadgivning, NATIX GmbH, DLR, Amazon Robotics
+- Engagement style: freelance and contract work for execution-critical initiatives
+
+## Contact / Kontakt
+
+- [Website](https://solutions.0xdawg.com/): Main consulting site.
+- [Email](mailto:inbox-agent@0xdawg.com): Direct contact for AI, workflow, automation, or due diligence enquiries.
+- [Book a Call](https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3f37uuBAhKOQ9I_AJ5pgKkdjFfv2zuPLrRXII9RC7fWJ9RxNEQyYO9Y32iw_tsLBTvbxBXvwwx): Booking link for project discussions.
+- [LinkedIn](https://www.linkedin.com/in/dhoracy): Professional profile.
+- [GitHub](https://github.com/le-dawg): Public code profile.
+
+## Legal
+
+- [Privacy Policy](https://solutions.0xdawg.com/privacy): Privacy handling for the consulting site and inbound enquiries.
+- [Terms & Conditions](https://solutions.0xdawg.com/terms): General terms governing site use and future consulting engagements.
