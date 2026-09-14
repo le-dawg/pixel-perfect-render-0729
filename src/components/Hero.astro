@@ -2,6 +2,16 @@
 import ContactLinks from './ContactLinks.astro';
 import HeroBackdrop from './HeroBackdrop.astro';
 import Portrait from './Portrait.astro';
+
+const rotatorLines = [
+  "We have AI access now, but the tools aren't making us faster",
+  "We're drowning in output, but verification is choking us now",
+  "We track AI spend perfectly, but the bottom line moves in the wrong direction!",
+  "We're a <s>hardware</s> business, AI can't help us here",
+  "We're a <s>people</s> business, AI can't help us here",
+  "We're an <s>infrastructure</s> business, AI can't help us here",
+  "We're an <s>R&amp;D lab</s> here, AI like this can't help us"
+];
 ---
 <section class="hero-section" aria-labelledby="hero-title">
   <div class="hero-backdrop-shell">
@@ -10,10 +20,24 @@ import Portrait from './Portrait.astro';
   <div class="hero wrap">
     <div class="hero-copy">
       <p class="hero-kicker">Enterprise AI, data, and workflow delivery</p>
-      <h1 id="hero-title">AI access on its own does not improve business capacity.</h1>
-      <p class="hero-subline">If your organization is seeing more output than value, I help fix the operating problems behind that gap.</p>
-      <p class="hero-support">I help enterprise teams turn fragmented AI, data, and knowledge work into fit-for-purpose delivery systems with clear problem framing, system boundaries, writable context, and evidence-led feedback loops so outputs can be validated, operationalized, and improved without constant rework.</p>
-      <ContactLinks />
+      <h1 id="hero-title">
+        <span class="hero-rotator" data-lines={JSON.stringify(rotatorLines)}>
+          <span class="hero-rotator-line" set:html={rotatorLines[0]} />
+        </span>
+      </h1>
+      <div class="hero-copy-flow">
+        <p class="hero-subline">AI is an amplifier of your processes: better process leads to much better and faster AI ROI.</p>
+        <div class="hero-support">
+          <p>But you don't have the time to figure out where the <em>current</em> capabilities can achieve the highest benefit:</p>
+          <ul>
+            <li>across departments</li>
+            <li>across jurisdictions</li>
+          </ul>
+          <p>And you lack the people to implement what's already on the roadmap.</p>
+          <p class="hero-closing">If you are drowning in an ocean of opportunity, a hero is what you need.</p>
+        </div>
+        <ContactLinks />
+      </div>
     </div>
     <aside class="hero-rail" aria-label="Credibility rail">
       <div class="hero-proof">
@@ -29,3 +53,7 @@ import Portrait from './Portrait.astro';
     </aside>
   </div>
 </section>
+
+<script>
+  import '../scripts/hero-rotator';
+</script>
