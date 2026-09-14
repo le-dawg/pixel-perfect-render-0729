@@ -39,5 +39,7 @@ describe('hero styling and animations', () => {
     expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*content:\s*['"]['"]/);
     expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*background:\s*var\(--accent\)/);
     expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*border-radius:\s*50%/);
+    expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*width:\s*12px/);
+    expect(css).toMatch(/\.hero-support\s+li::before\s*\{[^}]*height:\s*12px/);
   });
 });
