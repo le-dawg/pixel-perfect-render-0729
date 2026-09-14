@@ -24,8 +24,8 @@ export function initHeroRotator(root: Document | HTMLElement = document): () => 
   }
 
   let currentIndex = 0;
-  let enterTimeout: ReturnType<typeof setTimeout> | null = null;
-  let cleanupTimeout: ReturnType<typeof setTimeout> | null = null;
+  let enterTimeout: number | null = null;
+  let cleanupTimeout: number | null = null;
 
   const intervalId = window.setInterval(() => {
     lineEl.classList.add('is-leaving');
