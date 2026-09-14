@@ -20,7 +20,7 @@ describe('opportunity teaser markup', () => {
   test('teaser markup includes the voice-agent description copy', () => {
     const html = readFileSync(componentPath, 'utf8');
 
-    expect(html).toContain('Do you want to get a worry, a complete project proposal, or a blocker in your AI initiatives off your chest? A locally processed voice agent is coming to this page soon!');
+    expect(html).toContain('Do you prefer sharing your thoughts via voice? A locally processing voice agent (on your device, yes!) is coming to this page soon! Stay tuned for GDPR-safe agentic assessments.');
   });
 
   test('teaser markup includes three personas and a southern blank-zone hook', () => {
