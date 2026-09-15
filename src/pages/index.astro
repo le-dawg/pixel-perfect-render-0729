@@ -6,6 +6,7 @@ import '@fontsource/ibm-plex-mono/latin-400.css';
 import '../styles/global.css';
 import Hero from '../components/Hero.astro';
 import ProofStrip from '../components/ProofStrip.astro';
+import MentalModelBar from '../components/MentalModelBar.astro';
 import HowIWork from '../components/HowIWork.astro';
 import Timeline from '../components/Timeline.astro';
 import WhoIWorkBestWith from '../components/WhoIWorkBestWith.astro';
@@ -48,7 +49,7 @@ const ogImageUrl = `${site.url}${site.ogImage}`;
       <a class="name" href="#main">{pageTitle}</a>
       <nav aria-label="Main navigation"><a href="#approach">Approach</a><a href="#experience">Track record</a></nav>
     </header>
-    <main id="main"><Hero /><DiagonalBoundary boundary="heroToProof" /><ProofStrip /><DiagonalBoundary boundary="proofToMethod" /><HowIWork /><DiagonalBoundary boundary="methodToTimeline" /><Timeline /><DiagonalBoundary boundary="timelineToFit" /><WhoIWorkBestWith /><DiagonalBoundary boundary="fitToContact" /><ContactBand /></main>
+    <main id="main"><Hero /><DiagonalBoundary boundary="heroToProof" /><MentalModelBar /><ProofStrip /><DiagonalBoundary boundary="proofToMethod" /><HowIWork /><DiagonalBoundary boundary="methodToTimeline" /><Timeline /><DiagonalBoundary boundary="timelineToFit" /><WhoIWorkBestWith /><DiagonalBoundary boundary="fitToContact" /><ContactBand /></main>
     <OpportunityTeaser />
     <footer class="wrap site-footer">
       <p>© {new Date().getFullYear()} {site.name}</p>
