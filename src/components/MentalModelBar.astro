@@ -1,0 +1,289 @@
+---
+const panelId = 'mental-model-panel';
+const dialogId = 'mental-model-visuals';
+---
+<section class="mental-model-band" data-mental-model-root>
+  <button
+    type="button"
+    class="mental-model-bar"
+    data-mental-model-trigger
+    data-visible="false"
+    aria-controls={panelId}
+    aria-expanded="false"
+    aria-hidden="true"
+    hidden
+  >
+    <span>If you read nothing else: read this</span>
+  </button>
+
+  <div class="mental-model-panel-shell" data-mental-model-panel-shell data-open="false">
+    <div
+      id={panelId}
+      class="mental-model-panel"
+      data-mental-model-panel
+      aria-hidden="true"
+    >
+      <div class="mental-model-panel-inner">
+        <p>AI is fueled by hype. The hype is warranted, but hasty decisions can lead to costly mistakes. I've seen that.</p>
+        <p>I want to equip you with the mental model I use when simplifying strategies, project plans, and, of course, when "teaching how to fish".</p>
+        <p>
+          <a class="mental-model-link" href="#">Download it as a PDF here</a>, or click the thumbnail for an explanation.
+        </p>
+        <button
+          type="button"
+          class="mental-model-thumbnail"
+          data-mental-model-thumbnail
+          aria-haspopup="dialog"
+          aria-controls={dialogId}
+        >
+          <span>Mental model visual — placeholder</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id={dialogId}
+    class="mental-model-modal"
+    data-mental-model-modal
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mental model visuals"
+    aria-hidden="true"
+    hidden
+  >
+    <div class="mental-model-modal-backdrop" data-mental-model-backdrop>
+      <div class="mental-model-dialog" data-mental-model-dialog>
+        <button type="button" class="mental-model-close" data-mental-model-close aria-label="Close mental model visuals">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="mental-model-visual-grid">
+          <div class="mental-model-visual-card">Visual 1</div>
+          <div class="mental-model-visual-card">Visual 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initMentalModelBar } from '../scripts/mental-model-bar';
+
+  const bootMentalModelBar = () => initMentalModelBar(document);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootMentalModelBar, { once: true });
+  } else {
+    bootMentalModelBar();
+  }
+</script>
+
+<style>
+  .mental-model-band {
+    --mental-model-bar: #a06a3b;
+    --mental-model-bar-hover: #955f31;
+    --mental-model-glow: rgba(210, 160, 100, 0.55);
+    --mental-model-surface: #f7f7f2;
+    --mental-model-border: rgba(31, 44, 65, 0.14);
+    --mental-model-ink: #1f2c41;
+    --mental-model-muted: #58657a;
+
+    position: relative;
+    margin: 0;
+    background: transparent;
+  }
+
+  .mental-model-bar {
+    width: 100%;
+    border: 0;
+    padding: 0.95rem 1.5rem;
+    background: var(--mental-model-bar);
+    color: #ffffff;
+    font: 600 0.95rem/1.2 var(--sans, 'IBM Plex Sans', sans-serif);
+    letter-spacing: 0.01em;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 12px var(--mental-model-glow);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background-color 0.24s ease;
+    animation: mental-model-pulse 2.8s ease-in-out infinite;
+  }
+
+  .mental-model-bar:hover,
+  .mental-model-bar:focus-visible {
+    background: var(--mental-model-bar-hover);
+  }
+
+  .mental-model-bar[data-visible='true'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mental-model-panel-shell {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 3.8s ease, opacity 3.8s ease;
+  }
+
+  .mental-model-panel-shell[data-open='true'] {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .mental-model-panel {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .mental-model-panel-inner {
+    width: min(640px, calc(100vw - 2rem));
+    margin: 0.85rem auto 0;
+    padding: 1.4rem;
+    border: 1px solid var(--mental-model-border);
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--mental-model-surface) 92%, #ffffff 8%);
+    color: var(--mental-model-ink);
+    box-shadow: 0 18px 46px rgba(31, 44, 65, 0.08);
+    display: grid;
+    gap: 1rem;
+  }
+
+  .mental-model-panel-inner p {
+    margin: 0;
+    color: var(--mental-model-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .mental-model-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(160, 106, 59, 0.12);
+    color: var(--mental-model-ink);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+  }
+
+  .mental-model-thumbnail {
+    width: min(100%, 320px);
+    aspect-ratio: 16 / 10;
+    margin: 0 auto;
+    border: 1px dashed rgba(31, 44, 65, 0.22);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(244, 241, 236, 0.9));
+    color: var(--mental-model-muted);
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    text-align: center;
+    font: 500 0.95rem/1.4 var(--sans, 'IBM Plex Sans', sans-serif);
+    cursor: pointer;
+  }
+
+  .mental-model-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+  }
+
+  .mental-model-modal-backdrop {
+    min-height: 100%;
+    padding: 1.5rem;
+    background: rgba(31, 44, 65, 0.68);
+    display: grid;
+    place-items: center;
+  }
+
+  .mental-model-dialog {
+    width: min(920px, 100%);
+    border-radius: 24px;
+    background: #f7f7f2;
+    color: var(--mental-model-ink);
+    padding: 1.25rem;
+    position: relative;
+    box-shadow: 0 28px 64px rgba(0, 0, 0, 0.22);
+  }
+
+  .mental-model-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(31, 44, 65, 0.08);
+    color: var(--mental-model-ink);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mental-model-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .mental-model-visual-card {
+    min-height: min(52vh, 360px);
+    border: 1px solid rgba(31, 44, 65, 0.14);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(236, 231, 224, 0.92));
+    display: grid;
+    place-items: center;
+    color: var(--mental-model-muted);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  :global(body.mental-model-modal-open) {
+    overflow: hidden;
+  }
+
+  @keyframes mental-model-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 10px rgba(210, 160, 100, 0.38);
+      filter: brightness(1);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(210, 160, 100, 0.62);
+      filter: brightness(1.04);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .mental-model-bar {
+      padding-inline: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .mental-model-panel-inner,
+    .mental-model-dialog {
+      width: min(100%, calc(100vw - 1rem));
+    }
+
+    .mental-model-visual-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mental-model-bar {
+      animation: none;
+      transition-duration: 0.01ms;
+    }
+
+    .mental-model-panel-shell {
+      transition-duration: 0.01ms;
+    }
+  }
+</style>
